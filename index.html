@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Amza Restaurant | Fine Dining & Traditë</title>
-    <meta name="description" content="Përjetoni shijet më të mira në restorantin Amza. Rezervoni tryezën tuaj përmes WhatsApp dhe merrni konfirmim të menjëhershëm.">
+    <title>Taverna Gegë | Kuzhinë Tradicionale Shqiptare</title>
+    <meta name="description" content="Përjetoni shijet autentike të veriut shqiptar në Taverna Gegë. Ushqim i përgatitur me dashuri, ambient tradicional dhe mikpritje gegë. Rezervoni tryezën tuaj tani!">
+    <meta name="keywords" content="Taverna Gegë, restorant tradicional, kuzhinë shqiptare, ushqim verior, Prishtinë">
+    <meta name="author" content="Taverna Gegë">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Taverna Gegë - Traditë dhe Shije">
+    <meta property="og:description" content="Një përvojë autentike e kuzhinës veriore shqiptare.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200">
+    <meta property="og:url" content="https://tavernagege.com">
+    <meta name="instagram:card" content="summary_large_image">
     
-    <!-- Font Awesome 6 -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/restaurant.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <!-- AOS Library (Animations on scroll) -->
+    <!-- AOS (Animate on Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Lightbox (galeria) -->
+    <!-- Lightbox2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
     
+    <!-- Swiper JS (për slider) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,15 +48,18 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Header & Navigation -->
+    <!-- Header Navigation -->
     <header>
         <nav class="container">
-            <div class="logo" data-aos="fade-right">Amza<span>.</span></div>
+            <div class="logo" data-aos="fade-right">
+                <span>Taverna</span> Gegë
+            </div>
             <ul class="nav-links">
                 <li><a href="#hero">Kreu</a></li>
-                <li><a href="#menu">Menu</a></li>
+                <li><a href="#menu" id="menu-link">Menu</a></li>
                 <li><a href="#about">Rreth</a></li>
                 <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#testimonials">Dëshmitë</a></li>
                 <li><a href="#reservation">Rezervo</a></li>
             </ul>
             <div class="burger">
@@ -51,44 +70,50 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Video Background (Impresive) -->
+    <!-- Hero Section with Video Background -->
     <section id="hero" class="hero">
         <div class="hero-overlay"></div>
-        <video autoplay muted loop playsinline class="hero-video">
+        <video autoplay muted loop playsinline class="hero-video" poster="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600">
             <source src="https://assets.mixkit.co/video/preview/mixkit-wooden-table-with-food-and-drinks-39473-large.mp4" type="video/mp4">
-            <!-- Fallback image nëse video nuk luan -->
         </video>
         <div class="container hero-content" data-aos="fade-up" data-aos-duration="1500">
-            <h1>Artizanët e <span class="gradient-text">Shijes</span></h1>
-            <p>Kuzhinë bashkëkohore & traditë e pasur shqiptare</p>
-            <a href="#reservation" class="btn btn-primary">Rezervo tani <i class="fas fa-arrow-right"></i></a>
+            <h1>Taverna <span class="gradient-text">Gegë</span></h1>
+            <p>Shija e veriut, në zemër të kryeqytetit</p>
+            <div class="hero-buttons">
+                <a href="#reservation" class="btn btn-primary">Rezervo tryezën <i class="fas fa-arrow-right"></i></a>
+                <a href="#menu" class="btn btn-outline">Shiko menunë <i class="fas fa-utensils"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Lëviz poshtë</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- Special Countdown (Daily Special) -->
+    <!-- Special of the Day Bar -->
     <section class="special-bar">
         <div class="container">
             <div class="special-text">
-                <i class="fas fa-utensils"></i>
-                <span>Sugjerimi i ditës: </span>
-                <strong>Tavë Dheu me Qengji</strong>
+                <i class="fas fa-fire"></i>
+                <span>❤️ Specialja e ditës: </span>
+                <strong>"Tavë Dheu me Qengji"</strong>
                 <span id="countdown"></span>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section with Filters -->
+    <!-- Menu Section with Filters & Modal -->
     <section id="menu" class="menu section-padding">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Menu e Jonë</h2>
             <div class="filter-buttons" data-aos="fade-up">
                 <button class="filter-btn active" data-filter="all">Të gjitha</button>
-                <button class="filter-btn" data-filter="food">Ushqime</button>
+                <button class="filter-btn" data-filter="traditional">Tradicionale</button>
                 <button class="filter-btn" data-filter="drinks">Pije</button>
                 <button class="filter-btn" data-filter="dessert">Ëmbëlsira</button>
             </div>
             <div class="menu-grid" id="menu-grid" data-aos="fade-up">
-                <!-- Dinamikisht nga JS -->
+                <!-- Ngarkohet dinamikisht nga JavaScript -->
             </div>
         </div>
     </section>
@@ -97,53 +122,85 @@
     <section id="about" class="about section-padding">
         <div class="container about-flex">
             <div class="about-text" data-aos="fade-right">
-                <h2>Më shumë se <span class="gradient-text">një restorant</span></h2>
-                <p>Themeluar mbi 15 vjet më parë, Amza sjell përvojën autentike të kuzhinës mesdhetare me prekje moderne. Përbërësit vendas, ambienti i ngrohtë dhe orkestra e gjallë në fundjavë na bëjnë destinacionin tuaj të preferuar.</p>
+                <h2>Historia e <span class="gradient-text">Tavernës Gegë</span></h2>
+                <p>Themeluar në vitin 2018 nga familja Hoxha, Taverna Gegë sjell në Prishtinë shijet autentike të kuzhinës veriore shqiptare. Emrin e kemi marrë nga <strong>fisi i gegëve</strong>, i njohur për mikpritjen e ngrohtë dhe ushqimin e bollshëm.</p>
+                <p>Çdo recetë është trashëguar brez pas brezi, duke përdorur vetëm përbërësit më të freskët vendorë. Ambienti ynë i ngrohtë me elemente druri dhe detaje etno krijon atmosferën perfekte për një darkë të paharrueshme.</p>
                 <div class="signature-chef">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Chef">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Shefja e kuzhinës">
                     <div>
-                        <h4>Chef Gëzim Hoxha</h4>
-                        <p>"Pasioni ynë është t'ju ushqejmë lumturi"</p>
+                        <h4>Shefja Luljeta Hoxha</h4>
+                        <p>"Gatimi është dashuri e bërë e ngrënshme"</p>
                     </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://instagram.com/tavernagege" target="_blank"><i class="fab fa-instagram"></i> @tavernagege</a>
+                    <a href="#"><i class="fab fa-facebook-f"></i> Taverna Gegë</a>
                 </div>
             </div>
             <div class="about-image" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600" alt="Ambient restoranti">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600" alt="Ambient i Tavernës Gegë">
+                <div class="experience-badge">
+                    <span>6+ Vite</span>
+                    <p>Përvojë & Traditë</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery with Lightbox -->
+    <!-- Gallery Section with Lightbox -->
     <section id="gallery" class="gallery section-padding">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Galeria</h2>
+            <h2 class="section-title" data-aos="fade-up">Galeria Instagram</h2>
             <div class="gallery-grid" id="gallery-grid" data-aos="fade-up">
-                <!-- Imazhet nga JS -->
+                <!-- Dinamikisht -->
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="https://instagram.com/tavernagege" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-instagram"></i> Ndiqni në Instagram
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Reservation Section with WhatsApp -->
+    <!-- Testimonials / Dëshmitë e klientëve -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Çfarë thonë mysafirët</h2>
+            <div class="swiper testimonial-swiper" data-aos="fade-up">
+                <div class="swiper-wrapper" id="testimonials-wrapper">
+                    <!-- Do të mbushet me JS -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section with WhatsApp Integration -->
     <section id="reservation" class="reservation section-padding">
         <div class="container">
             <div class="reservation-card" data-aos="zoom-in">
                 <div class="reservation-left">
-                    <i class="fas fa-whatsapp fa-3x" style="color:#25D366;"></i>
+                    <i class="fab fa-whatsapp fa-4x"></i>
                     <h2>Rezervo përmes WhatsApp</h2>
-                    <p>Plotëso të dhënat dhe ne do të konfirmojmë brenda 15 minutave në WhatsApp.</p>
+                    <p>Plotëso të dhënat dhe ne do të konfirmojmë brenda 15 minutave.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Përgjigje e shpejtë</li>
-                        <li><i class="fas fa-check-circle"></i> Konfirmim automatik</li>
-                        <li><i class="fas fa-check-circle"></i> Asnjë tarifë rezervimi</li>
+                        <li><i class="fas fa-check-circle"></i> Konfirmim i shpejtë</li>
+                        <li><i class="fas fa-check-circle"></i> Asnjë pagesë paraprake</li>
+                        <li><i class="fas fa-check-circle"></i> Menaxhim i lehtë i rezervimit</li>
                     </ul>
+                    <div class="opening-hours">
+                        <h3>Orari i punës</h3>
+                        <p>E hënë – E diel: 09:00 – 23:00</p>
+                        <p>E premte & E shtunë: deri në 01:00</p>
+                    </div>
                 </div>
                 <div class="reservation-right">
                     <form id="reservationForm">
                         <div class="form-group">
-                            <input type="text" id="resName" placeholder="Emri i plotë" required>
+                            <input type="text" id="resName" placeholder="Emri i plotë *" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="resPhone" placeholder="Numri i telefonit (për WhatsApp)" required>
+                            <input type="tel" id="resPhone" placeholder="Numri i telefonit (WhatsApp) *" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -154,13 +211,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="number" id="resGuests" placeholder="Numri i të ftuarve" min="1" max="20" required>
+                            <input type="number" id="resGuests" placeholder="Numri i të ftuarve *" min="1" max="20" required>
                         </div>
                         <div class="form-group">
                             <textarea id="resMessage" placeholder="Kërkesa speciale (opsionale)"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fab fa-whatsapp"></i> Dërgo kërkesën në WhatsApp
+                            <i class="fab fa-whatsapp"></i> Dërgo kërkesën
                         </button>
                     </form>
                 </div>
@@ -168,26 +225,41 @@
         </div>
     </section>
 
+    <!-- Google Maps -->
+    <section class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.642126996502!2d21.159499!3d42.662871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f5b1b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sPrishtina!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s" 
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <h3>Amza Restaurant</h3>
-                    <p>Rr. Ibrahim Rugova, nr. 12<br>Prishtinë, Kosovë</p>
+                    <h3>Taverna Gegë</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rr. "Gegë Toptani", nr. 25<br>Prishtinë, 10000</p>
+                    <p><i class="fas fa-phone-alt"></i> +383 44 123 456</p>
+                    <p><i class="fab fa-whatsapp"></i> +383 44 123 456</p>
                 </div>
                 <div class="footer-col">
                     <h3>Orari</h3>
-                    <p>E hënë – E diel: 09:00 – 23:00</p>
+                    <p>Hënë - Enjte: 09:00 - 23:00</p>
+                    <p>Premte - Shtunë: 09:00 - 01:00</p>
+                    <p>Diel: 09:00 - 22:00</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Kontakt</h3>
-                    <p><i class="fas fa-phone"></i> +383 44 123 456<br>
-                    <i class="fab fa-whatsapp"></i> +383 44 123 456</p>
+                    <h3>Ndiqni</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/tavernagege" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <h3 style="margin-top: 20px;">Pranoni kartat</h3>
+                    <p><i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-amex"></i></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Amza Restaurant. Të gjitha të drejtat e rezervuara.</p>
+                <p>&copy; 2025 Taverna Gegë. Të gjitha të drejtat e rezervuara. | <a href="#">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
@@ -195,6 +267,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
