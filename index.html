@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Restoranti "Amza" - Ushqim Autentik</title>
+    <meta name="description" content="Shijoni specialitetet tona në një atmosferë të ngrohtë. Rezervoni tryezën tuaj sot!">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Restorant <span>Amza</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Kreu</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">Rreth nesh</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Shije & Traditë</h1>
+            <p>Përgatitur me dashuri nga kuzhinierët tanë më të mirë</p>
+            <a href="#contact" class="btn btn-primary">Rezervo tryezën</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu section-padding">
+        <div class="container">
+            <h2 class="section-title">Menu e Javës</h2>
+            <div class="menu-grid" id="menu-grid">
+                <!-- Dinamikisht nga JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container about-flex">
+            <div class="about-text">
+                <h2>Rreth Restorantit Amza</h2>
+                <p>Themeluar në vitin 2010, restoranti ynë sjell shijet autentike shqiptare dhe ndërkombëtare. Ambienti i ngrohtë, shërbimi miqësor dhe përbërësit e freskët na bëjnë zgjedhjen tuaj më të mirë.</p>
+                <p>Kuzhina jonë përdot vetëm produkte organike dhe receta të trashëguara brez pas brezi. E martoja jonë: "Ushqimi i mirë është lumturi"</p>
+                <a href="#contact" class="btn btn-secondary">Na kontaktoni</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Ambient restoranti">
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery section-padding">
+        <div class="container">
+            <h2 class="section-title">Galeria</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Foto nga JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container contact-flex">
+            <div class="contact-info">
+                <h2>Na vizitoni</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Rr. "Kryezinëve", Prishtinë 10000</p>
+                <p><i class="fas fa-phone-alt"></i> +383 44 123 456</p>
+                <p><i class="fas fa-envelope"></i> info@restorantamza.com</p>
+                <p><i class="fas fa-clock"></i> Hapur: 09:00 - 23:00 (çdo ditë)</p>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <input type="text" placeholder="Emri juaj" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="4" placeholder="Mesazhi / Rezervimi"></textarea>
+                <button type="submit" class="btn btn-primary">Dërgo</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Restorant Amza. Të gjitha të drejtat e rezervuara.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
