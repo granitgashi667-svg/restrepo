@@ -3,22 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Restoranti "Amza" - Ushqim Autentik</title>
-    <meta name="description" content="Shijoni specialitetet tona në një atmosferë të ngrohtë. Rezervoni tryezën tuaj sot!">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Amza Restaurant | Fine Dining & Traditë</title>
+    <meta name="description" content="Përjetoni shijet më të mira në restorantin Amza. Rezervoni tryezën tuaj përmes WhatsApp dhe merrni konfirmim të menjëhershëm.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- AOS Library (Animations on scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lightbox (galeria) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Dark/Light Mode Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" id="whatsappFloat" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header & Navigation -->
     <header>
         <nav class="container">
-            <div class="logo">Restorant <span>Amza</span></div>
+            <div class="logo" data-aos="fade-right">Amza<span>.</span></div>
             <ul class="nav-links">
-                <li><a href="#home">Kreu</a></li>
+                <li><a href="#hero">Kreu</a></li>
                 <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">Rreth nesh</a></li>
+                <li><a href="#about">Rreth</a></li>
                 <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#reservation">Rezervo</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -28,75 +51,150 @@
         </nav>
     </header>
 
-    <section id="home" class="hero">
+    <!-- Hero Section with Video Background (Impresive) -->
+    <section id="hero" class="hero">
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1>Shije & Traditë</h1>
-            <p>Përgatitur me dashuri nga kuzhinierët tanë më të mirë</p>
-            <a href="#contact" class="btn btn-primary">Rezervo tryezën</a>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/video/preview/mixkit-wooden-table-with-food-and-drinks-39473-large.mp4" type="video/mp4">
+            <!-- Fallback image nëse video nuk luan -->
+        </video>
+        <div class="container hero-content" data-aos="fade-up" data-aos-duration="1500">
+            <h1>Artizanët e <span class="gradient-text">Shijes</span></h1>
+            <p>Kuzhinë bashkëkohore & traditë e pasur shqiptare</p>
+            <a href="#reservation" class="btn btn-primary">Rezervo tani <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
+    <!-- Special Countdown (Daily Special) -->
+    <section class="special-bar">
+        <div class="container">
+            <div class="special-text">
+                <i class="fas fa-utensils"></i>
+                <span>Sugjerimi i ditës: </span>
+                <strong>Tavë Dheu me Qengji</strong>
+                <span id="countdown"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section with Filters -->
     <section id="menu" class="menu section-padding">
         <div class="container">
-            <h2 class="section-title">Menu e Javës</h2>
-            <div class="menu-grid" id="menu-grid">
+            <h2 class="section-title" data-aos="fade-up">Menu e Jonë</h2>
+            <div class="filter-buttons" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Të gjitha</button>
+                <button class="filter-btn" data-filter="food">Ushqime</button>
+                <button class="filter-btn" data-filter="drinks">Pije</button>
+                <button class="filter-btn" data-filter="dessert">Ëmbëlsira</button>
+            </div>
+            <div class="menu-grid" id="menu-grid" data-aos="fade-up">
                 <!-- Dinamikisht nga JS -->
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about section-padding">
         <div class="container about-flex">
-            <div class="about-text">
-                <h2>Rreth Restorantit Amza</h2>
-                <p>Themeluar në vitin 2010, restoranti ynë sjell shijet autentike shqiptare dhe ndërkombëtare. Ambienti i ngrohtë, shërbimi miqësor dhe përbërësit e freskët na bëjnë zgjedhjen tuaj më të mirë.</p>
-                <p>Kuzhina jonë përdot vetëm produkte organike dhe receta të trashëguara brez pas brezi. E martoja jonë: "Ushqimi i mirë është lumturi"</p>
-                <a href="#contact" class="btn btn-secondary">Na kontaktoni</a>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Ambient restoranti">
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="gallery section-padding">
-        <div class="container">
-            <h2 class="section-title">Galeria</h2>
-            <div class="gallery-grid" id="gallery-grid">
-                <!-- Foto nga JS -->
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact section-padding">
-        <div class="container contact-flex">
-            <div class="contact-info">
-                <h2>Na vizitoni</h2>
-                <p><i class="fas fa-map-marker-alt"></i> Rr. "Kryezinëve", Prishtinë 10000</p>
-                <p><i class="fas fa-phone-alt"></i> +383 44 123 456</p>
-                <p><i class="fas fa-envelope"></i> info@restorantamza.com</p>
-                <p><i class="fas fa-clock"></i> Hapur: 09:00 - 23:00 (çdo ditë)</p>
-                <div class="social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="about-text" data-aos="fade-right">
+                <h2>Më shumë se <span class="gradient-text">një restorant</span></h2>
+                <p>Themeluar mbi 15 vjet më parë, Amza sjell përvojën autentike të kuzhinës mesdhetare me prekje moderne. Përbërësit vendas, ambienti i ngrohtë dhe orkestra e gjallë në fundjavë na bëjnë destinacionin tuaj të preferuar.</p>
+                <div class="signature-chef">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Chef">
+                    <div>
+                        <h4>Chef Gëzim Hoxha</h4>
+                        <p>"Pasioni ynë është t'ju ushqejmë lumturi"</p>
+                    </div>
                 </div>
             </div>
-            <form id="contact-form" class="contact-form">
-                <input type="text" placeholder="Emri juaj" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="4" placeholder="Mesazhi / Rezervimi"></textarea>
-                <button type="submit" class="btn btn-primary">Dërgo</button>
-            </form>
+            <div class="about-image" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600" alt="Ambient restoranti">
+            </div>
         </div>
     </section>
 
+    <!-- Gallery with Lightbox -->
+    <section id="gallery" class="gallery section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Galeria</h2>
+            <div class="gallery-grid" id="gallery-grid" data-aos="fade-up">
+                <!-- Imazhet nga JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section with WhatsApp -->
+    <section id="reservation" class="reservation section-padding">
+        <div class="container">
+            <div class="reservation-card" data-aos="zoom-in">
+                <div class="reservation-left">
+                    <i class="fas fa-whatsapp fa-3x" style="color:#25D366;"></i>
+                    <h2>Rezervo përmes WhatsApp</h2>
+                    <p>Plotëso të dhënat dhe ne do të konfirmojmë brenda 15 minutave në WhatsApp.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Përgjigje e shpejtë</li>
+                        <li><i class="fas fa-check-circle"></i> Konfirmim automatik</li>
+                        <li><i class="fas fa-check-circle"></i> Asnjë tarifë rezervimi</li>
+                    </ul>
+                </div>
+                <div class="reservation-right">
+                    <form id="reservationForm">
+                        <div class="form-group">
+                            <input type="text" id="resName" placeholder="Emri i plotë" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="resPhone" placeholder="Numri i telefonit (për WhatsApp)" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" id="resDate" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="time" id="resTime" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="resGuests" placeholder="Numri i të ftuarve" min="1" max="20" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="resMessage" placeholder="Kërkesa speciale (opsionale)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fab fa-whatsapp"></i> Dërgo kërkesën në WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Restorant Amza. Të gjitha të drejtat e rezervuara.</p>
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Amza Restaurant</h3>
+                    <p>Rr. Ibrahim Rugova, nr. 12<br>Prishtinë, Kosovë</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Orari</h3>
+                    <p>E hënë – E diel: 09:00 – 23:00</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontakt</h3>
+                    <p><i class="fas fa-phone"></i> +383 44 123 456<br>
+                    <i class="fab fa-whatsapp"></i> +383 44 123 456</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amza Restaurant. Të gjitha të drejtat e rezervuara.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
