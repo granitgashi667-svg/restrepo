@@ -129,7 +129,7 @@ function initTestimonialsSwiper() {
 function setupReservation() {
     const form = document.getElementById("reservationForm");
     if (!form) return;
-    const RESTAURANT_PHONE = "38344123456"; // Zëvendëso me numrin real të Tavernës Gegë
+    const RESTAURANT_PHONE = "3834558838"; // Zëvendëso me numrin real të Tavernës Gegë
     
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -208,7 +208,7 @@ function setupFloatWA() {
     if (btn) {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
-            window.open("https://wa.me/38344123456?text=Përshëndetje!%20Dua%20të%20rezervoj%20një%20tryezë.", "_blank");
+            window.open("https://wa.me/38345588388?text=Përshëndetje!%20Dua%20të%20rezervoj%20një%20tryezë.", "_blank");
         });
     }
 }
